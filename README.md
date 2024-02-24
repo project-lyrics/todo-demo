@@ -7,6 +7,6 @@
 커밋 전 반드시 `./gradlew checkstyleMain`을 실행해주세요.
 
 ```shell
-echo "./gradlew checkstyleMain; git add ." > .git/hooks/pre-commit
+echo "./gradlew checkstyleMain; git update-index --again" > .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```

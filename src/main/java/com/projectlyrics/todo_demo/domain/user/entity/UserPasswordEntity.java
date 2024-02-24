@@ -20,7 +20,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Table(name = "users")
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class UserEntity {
+public class UserPasswordEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
