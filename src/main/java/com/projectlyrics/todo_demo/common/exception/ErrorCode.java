@@ -8,7 +8,8 @@ import org.springframework.http.HttpStatus;
 @RequiredArgsConstructor
 public enum ErrorCode {
 
-  BAD_REQUEST(HttpStatus.BAD_REQUEST, "Bad request", "000400");
+  BAD_REQUEST(HttpStatus.BAD_REQUEST, "Bad request", "000400"),
+  PASSWORD_NOT_SET(HttpStatus.FORBIDDEN, "Password not set", "100001");
 
   private final HttpStatus responseStatus;
   private final String errorMessage;
