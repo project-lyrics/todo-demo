@@ -8,6 +8,8 @@ import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.util.UUID;
 import lombok.AccessLevel;
@@ -25,8 +27,11 @@ public class UserPasswordEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID uuid;
-  @Column(length = 100)
-  private String emailAddress;
+  @Column(length = 255, nullable = false)
+  private String password;
+  @ManyToOne
+  @JoinColumn(name = "user_id")
+  private UserEntity user;
   @Embedded
   private EntityCommonField commonField;
 }
